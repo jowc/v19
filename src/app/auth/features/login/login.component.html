@@ -1,0 +1,26 @@
+<form [formGroup]="loginForm" (submit)="submit()">
+    <div>
+        <input type="text" name="username" autocomplete="username" placeholder="username" formControlName="username">
+    </div>
+    <div>
+        <input type="password" name="password" autocomplete="current-password" placeholder="password" formControlName="password">
+    </div>
+
+    <div>
+        <button>Login</button>
+    </div>
+</form>
+
+@if (user()) {
+    @defer ( ) {
+        <div>
+            <section>name: {{user()?.name}}</section>
+            <section>email: {{user()?.email}}</section>
+            <section>role: {{user()?.role}}</section>
+        </div>
+    }
+}
+
+@if (message()) {
+    <div>{{message()}}</div>
+}
