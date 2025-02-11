@@ -20,4 +20,9 @@ describe('AboutComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have a paragraph tag and about works! text', () => {
+    const paragraph = fixture.nativeElement.querySelector('p');
+    expect(paragraph.textContent).toContain('about works!');
+  });
 });
