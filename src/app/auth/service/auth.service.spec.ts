@@ -19,9 +19,13 @@ describe('Auth Service', () => {
         expect(logIn).toBeUndefined()
     })
     it('should return LoginResInterface', () => {
-        const logIn = service.loginUser({email: 'joecdev@gmail.com', password: "hehe"})
-        const result: LoginResInterface = {access_token: 'memas', refresh_token: 'you'}
-        expect(logIn).toBeInstanceOf(Object)
+        const logIn = service.loginUser({
+          email: 'joecdev@gmail.com',
+          password: 'hehe',
+        }) as LoginResInterface;
+
+        expect(Object.hasOwn(logIn, 'access_token')).toBeTrue();
+        expect(Object.hasOwn(logIn, 'refresh_token')).toBeTrue();
     })
 
 })
