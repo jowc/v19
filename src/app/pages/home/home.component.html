@@ -1,1 +1,7 @@
-<p>home works!</p>
+<p *appDisplay="'hello' as text; then placeholder;">
+    {{text}} home works!
+</p>
+
+<ng-template #placeholder>
+    <p>My other component</p>
+</ng-template>
